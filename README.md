@@ -17,4 +17,6 @@ print(mysql.queryAll('select * from test)) #查询全部记录 返回一个列�
 
 print(mysql.getRowCount()) #得到查询结果数量
 
+print(mysql.md5('admin')) #md5加密(utf-8)
+
 mysql.exec('insert into test values(1)') #执行一条SQL语句 成功返回True 失败返回False
