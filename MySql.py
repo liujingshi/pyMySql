@@ -1,4 +1,5 @@
 import pymysql
+import hashlib
 
 class MySql:
 
@@ -43,3 +44,7 @@ class MySql:
     def getRowCount(self): #得到查询的结果数量
         return self._mysqli.rowcount
 
+    def md5(self, data): #md5加密
+        m = hashlib.md5()
+        m.update(data.encode("utf-8"))
+        return m.hexdigest()
