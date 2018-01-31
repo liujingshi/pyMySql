@@ -40,3 +40,6 @@ class MySql:
         else:
             return False
 
+    def getRowCount(self): #得到查询的结果数量
+        return self._mysqli.rowcount
+
