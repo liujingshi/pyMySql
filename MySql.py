@@ -4,7 +4,7 @@ import hashlib
 class MySql:
 
     def __init__(self, loalhost, dbUsername, dbPassword, dbName):  # 构造函数链接数据库设置游标
-        self._db = pymysql.connect(loalhost, dbUsername, dbPassword, dbName)
+        self._db = pymysql.connect(loalhost, dbUsername, dbPassword, dbName, charset="utf8")
         self._mysqli = self._db.cursor()
 
     def exec(self, sql):  # 执行sql语句
