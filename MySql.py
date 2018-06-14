@@ -14,13 +14,14 @@ class MySql:
             return True
         except:
             self._db.rollback()
+            print("sql error: {0}".format(sql))
             return False
 
     def _rowToDic(self, rows): #原记录转换为字典
         rowDic = {}
         fields = self._mysqli.description
         for i in range(0, len(fields)):
-            rowDic[fields[i][0]] = rows[i]
+            rowDic[fields[i][0]] = str(rows[i])
         return rowDic
 
     def query(self, sql):  # 查询一条记录
