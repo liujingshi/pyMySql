@@ -29,7 +29,7 @@ rst = Ljsmysql.table("user").where([
     ["age", ">", 20]
 ]).select()
 
-rst = Ljsmysql.table("name", "like", "_s")
+rst = Ljsmysql.table("user").where("name", "like", "_s").select()
 
 insert_id = Ljsmysql.table("user").insert({
     "name": "aaa",
